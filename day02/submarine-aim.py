@@ -23,7 +23,7 @@ foo = Submarine("yellow")
 
 print(foo)
 
-with open('input2.txt', 'r') as inputfile:
+with open('input.txt', 'r') as inputfile:
     commands = inputfile.readlines()
 
 # Main loop to parse directions
