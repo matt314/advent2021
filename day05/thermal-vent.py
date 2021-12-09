@@ -52,7 +52,7 @@ class SeaMap:
                 for y in yrange:
                     dangerpoints.append(f"{x},{y}")
         elif max(xends) - min(xends) == max(yends) - min(yends):
-            # diagonal
+            # diagonal, delta is equal
             return -2
         else:
             # not a perpendicular line
@@ -60,7 +60,7 @@ class SeaMap:
 
         # print(f"x: {xrange}, y: {yrange}")
         for point in dangerpoints:
-            self.addDanger(f"point")
+            self.addDanger(point)
 
  
         return self.danger
@@ -79,4 +79,3 @@ for line in ventlines:
     map1.dangerLine(line)
 
 print(map1)
-print(len(map1.printMap()))
