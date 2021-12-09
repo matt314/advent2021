@@ -53,7 +53,20 @@ class SeaMap:
                     dangerpoints.append(f"{x},{y}")
         elif max(xends) - min(xends) == max(yends) - min(yends):
             # diagonal, delta is equal
-            return -2
+            while xends[0] != xends[1]:
+                dangerpoints.append(f"{xends[0]},{yends[0]}")
+                # keep moving one end closer
+                if xends[0] > xends[1]:
+                    xends[0] -= 1
+                else:
+                    xends[0] += 1
+
+                if yends[0] > yends[1]:
+                    yends[0] -= 1
+                else:
+                    yends[0] += 1
+            # add last point
+            dangerpoints.append(f"{xends[1]},{yends[1]}")
         else:
             # not a perpendicular line
             return -1
